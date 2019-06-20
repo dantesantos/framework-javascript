@@ -2,13 +2,14 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) =>{
-    res.send(`Hey 'dere world!`);
-});
+//our routes
+const routes = require('./routes.js');
+app.use('/', routes);
 
-app.get('/about', (req, res) =>{
-    res.send(`I like long walks on the beach.`);
-});
+//view configuration
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 const port = process.env.PORT || 4000
 app.listen(port, () => console.log(`Listening on ${port}`));

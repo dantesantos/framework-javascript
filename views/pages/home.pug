@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+
+block globals
+    - const title = "My super awesome blogging platform"
+
+block content
+    h1#header= title
+
+    p.intro-text.second-class(data-attr="my value") It was a raining day in Pizzaville...
