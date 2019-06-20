@@ -13,5 +13,4 @@ router.post('/update', BlogsController.update);
 router.post('/destroy', BlogsController.destroy);
 
 //End routes
-
 module.exports = router;
